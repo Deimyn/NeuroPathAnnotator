@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+<meta charset="UTF-8">
+<title>Select Areas - Angular JS 1.4</title>
+
+<script src="../bower_components/jquery/dist/jquery.js"></script>
+<script src="../bower_components/angular/angular.js"></script>
+<script src="../../../../angular-areas.js"></script>
+<script src="app.js"></script>
+<script src="demo-controller.js"></script>
+
+<link href="../../../../css/angular-areas.css" media="screen"
+	rel="stylesheet" type="text/css" />
+<link href="demo.css" media="screen" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+
+	<h1>Angular Image Areas Directive Demo</h1>
+
+	<pre>
+		&ltimg ng-areas=&quot;fields&quot; 
+	</pre>
+	<pre>
+		ng-areas-allow=&quot;{'edit':true, 'move':true, 'resize':true, 'select':true, 'remove':true, 'nudge':true}&quot; 
+	</pre>
+	<pre>
+		ng-areas-width=&quot;900&quot; src=&quot;angularjsORG.jpg&quot;&gt;
+  	</pre>
+	<div ng-controller="DemoController">
+		<img ng-areas="fields900" ng-areas-width="900"
+			ng-areas-allow="{'edit':true, 'move':true, 'resize':true, 'select':true, 'remove':true, 'nudge':false}"
+			ng-areas-on-add="onAddArea"
+			ng-areas-on-remove="onRemoveArea"
+			ng-areas-on-change="onChangeAreas900"
+			ng-areas-extend-data="{pageNumber: 1, tag: 'width900'}"
+			src="angularjsORG.jpg">
+		<div>Event Log: {{log900}}</div>
+			
+		<img ng-areas="fields600" ng-areas-width="600"
+			ng-areas-allow="{'edit':true, 'move':true, 'resize':true, 'select':true, 'remove':true, 'nudge':false}"
+			ng-areas-on-add="onAddArea"
+			ng-areas-on-remove="onRemoveArea"
+			ng-areas-on-change="onChangeAreas600"
+			ng-areas-extend-data="{pageNumber: 1, tag: 'width600'}"
+			src="angularjsORG.jpg">
+			<div>Event Log: {{log600}}</div>
+			
+	</div>
+</body>
+</html>

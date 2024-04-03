@@ -1,0 +1,15 @@
+<div class="top-bar">
+  <h1>Proteins-tab</h1>
+</div>
+
+<div class="image-container" (mousedown)="onMouseDown($event)">
+  <img #myImage src="assets/images/test.jpg" alt="Image" draggable=false>
+  <div class="rectangle" *ngFor="let rect of rectangles; let i = index"
+       [style.left.px]="rect.x" [style.top.px]="rect.y"
+       [style.width.px]="rect.width" [style.height.px]="rect.height"
+       (mousedown)="$event.stopPropagation()">
+    <div class="resize-handle" (mousedown)="onResizeStart($event, rect)"></div>
+    <div class="move-handle" (mousedown)="onMoveStart($event, rect)"></div>
+    <div class="remove-cross" (click)="removeRectangle(i, $event)" draggable=false>&times;</div>
+  </div>
+</div>

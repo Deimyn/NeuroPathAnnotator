@@ -1,0 +1,63 @@
+h1{
+    margin: 0;
+    text-align: left;
+    padding-left: 5%;
+    font-size: medium;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+img {
+    user-select: none; /* Disable user selection */
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    width: 100%;
+    height: 100%;
+}
+
+.rectangle {
+    position: absolute;
+    border: 1px solid red;
+    box-sizing: border-box;
+}
+
+.resize-handle {
+  position: absolute;
+  bottom: -5px;
+  right: -5px;
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border: 1px solid black;
+  cursor: se-resize;
+}
+
+.move-handle {
+  position: absolute;
+  bottom: -5px;
+  left: -5px;
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border: 1px solid black;
+  cursor: move;
+}
+
+.remove-cross {
+    user-select: none;
+    position: absolute;
+    top: -9px;
+    right: -9px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    text-align: center;
+    line-height: 15px;
+    cursor: pointer;
+}
